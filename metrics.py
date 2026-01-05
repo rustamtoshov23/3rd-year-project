@@ -1,4 +1,5 @@
-#I am a NAUGHTY BOY trying to see if this works
+#The following code is adapted from DeepCell-TF and changed to suit the requirements of my project.
+# ==============================================================================
 # Copyright 2016-2022 The Van Valen Lab at the California Institute of
 # Technology (Caltech), with support from the Paul Allen Family Foundation,
 # Google, & National Institutes of Health (NIH) under Grant U24CA224309-01.
