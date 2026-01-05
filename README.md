@@ -2,7 +2,7 @@
 Here I will include mainly coding but also later everything else I used and need for my 3rd year project on segmenting tightly packed cells that share boundaries using machine learning
 
 ## Update 04/01/2026
-I am going to fork in the code for the metrics to determine how good segmentation algorithms are. Need to shorten down the code to only what I need, will hopefully do it tomorrow. 
+I wanted to fork in the code for the metrics to determine how good segmentation algorithms are. Did not manage to fork it, so just downloaded the files and uploaded them into my repository. Need to shorten down the code to only what I need, will hopefully do it tomorrow. 
 
 ## Update 05/01/2026
 - To run the metrics.py code, created a virtual environment, uploaded all the packages needed to run it successfully. 
@@ -13,12 +13,11 @@ cd "Calculating metrics"
 source .venv/bin/activate
 ```
 
-- Next, was not sure how to actually input my truth and prediction data into it, asked Copilot, it created a script called run_metrics.py for me to do that.
-- So now, I just need to upload truth and predictions data into it and hopefully it will work. It says it accepts .tif files.
+- So did not shorten the code. Instead, to run the metrics.py code Copilot created the run_metrics.py code which allows me to input my .tif files and run them to generate a .json file with all the metrics. 
 - Decided to keep it general, if I would need to run it for other images later.
 - Uploaded ground truth image into GitHub. Now need to try to get the prediction data out of the models. 
 - Got prediction data out of Nikhil's 3rd year project
-- Now to run run_metrics.py and get data, every time do not forget to activate and venv via code above and then every time you need to specify images and then I only want to see the summary .json file so next, put this into terminal (example with .tif files for Nikhil's 3rd year project, DO NOT FORGET TO CHANGE FILE NAME FOR PREDICTION EVERY TIME + CHANGE MODEL NAME TO PREDICTIOR ALGORITHM!):
+- Now to run run_metrics.py and get data, every time do not forget to activate venv via code above and then every time you need to specify images and then I only want to see the summary .json file so next, put this into terminal (example with .tif files for Nikhil's 3rd year project, DO NOT FORGET TO CHANGE FILE NAME FOR PREDICTION EVERY TIME + CHANGE MODEL NAME TO PREDICTIOR ALGORITHM!):
 
 ```zsh
 python run_metrics.py "Choosing best model images/Ground truth.tif" \
