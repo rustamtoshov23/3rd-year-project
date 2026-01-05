@@ -8,7 +8,7 @@ Quick start (zsh / macOS)
 1) Activate the project's venv:
 
 ```zsh
-cd "$(dirname "$0")" # run from within this folder or `cd` to the folder first
+cd "Calculating metrics"
 source .venv/bin/activate
 ```
 
