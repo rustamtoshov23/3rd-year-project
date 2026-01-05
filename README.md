@@ -18,7 +18,7 @@ source .venv/bin/activate
 - Decided to keep it general, if I would need to run it for other images later.
 - Uploaded ground truth image into GitHub. Now need to try to get the prediction data out of the models. 
 - Got prediction data out of Nikhil's 3rd year project
-- Now to run run_metrics.py and get data, every time do not forget to activate and venv via code above and then every time you need to specify images and then I only want to see the summary .json file so next, put this into terminal (example with .tif files for Nikhil's 3rd year project, DO NOT FORGET TO CHANGE FILE NAME FOR PREDICTION EVERY TIME!):
+- Now to run run_metrics.py and get data, every time do not forget to activate and venv via code above and then every time you need to specify images and then I only want to see the summary .json file so next, put this into terminal (example with .tif files for Nikhil's 3rd year project, DO NOT FORGET TO CHANGE FILE NAME FOR PREDICTION EVERY TIME + CHANGE MODEL NAME TO PREDICTIOR ALGORITHM!):
 
 ```zsh
 python run_metrics.py "Choosing best model images/Ground truth.tif" \
