@@ -856,55 +856,6 @@ class ObjectMetrics(BaseMetrics):
     def dice(self):
         return self.pixel_stats.dice
 
-    def plot_errors(self):
-        """Plots the errors identified from linear assignment code.
-
-        This must be run with sequentially relabeled data.
-
-        TODO: this is not working!
-        """
-
-        import matplotlib as mpl
-        import matplotlib.pyplot as plt
-
-        # erode edges for easier visualization of adjacent cells
-        y_true = erode_edges(self.y_true.copy(), 1)
-        y_pred = erode_edges(self.y_pred.copy(), 1)
-
-        # semantic labels for each error
-        categories = ['Background', 'missed', 'splits', 'merges',
-                      'gained', 'catastrophes', 'correct']
-
-        # Background is set to zero
-        plotting_tif = np.zeros_like(y_true)
-
-        # missed detections are tracked with true labels
-        misses = [d.true_index for d in self._missed]
-        plotting_tif[np.isin(y_true, misses)] = 1
-
-        # skip background and misses, already done
-        for i, category in enumerate(categories[2:]):
-            # the rest are all on y_pred
-            labels = list(getattr(self, '_{}'.format(category)))
-            plotting_tif[np.isin(y_pred, labels)] = i + 2
-
-        plotting_colors = ['Black', 'Pink', 'Blue', 'Green',
-                           'tan', 'Red', 'Grey']
-
-        cmap = mpl.colors.ListedColormap(plotting_colors)
-
-        fig, ax = plt.subplots(nrows=1, ncols=1)
-        mat = ax.imshow(plotting_tif, cmap=cmap,
-                        vmin=np.min(plotting_tif) - .5,
-                        vmax=np.max(plotting_tif) + .5)
-
-        # tell the colorbar to tick at integers
-        ticks = np.arange(len(categories))
-        cbar = fig.colorbar(mat, ticks=ticks)
-        cbar.ax.set_yticklabels(categories)
-        fig.tight_layout()
-
-
 class Metrics(object):
     """Class to calculate and save various segmentation metrics.
 
